@@ -8,17 +8,23 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-# gem 'mini_racer', platforms: :ruby
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
 gem 'haml'
+gem 'simple_form'
+gem 'nokogiri'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
 
-# gem 'redis', '~> 4.0'
-# gem 'bcrypt', '~> 3.1.7'
+gem 'paper_trail'
 
-# gem 'mini_magick', '~> 4.8'
+gem 'redis', '~> 4.0'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -34,6 +40,10 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 3.7'
+  gem 'webmock'
+  gem 'factory_bot_rails'
+  gem 'vcr', '~> 2.9', require: false
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
