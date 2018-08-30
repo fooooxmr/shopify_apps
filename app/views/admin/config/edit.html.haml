@@ -1,0 +1,10 @@
+%h1 Admin Area
+- if @config.errors
+  %ul.errors
+    - @config.errors.full_messages.each do |msg|
+      %li= msg
+= simple_form_for :config, url: update_admin_config_index_path, method: :put do |f|
+  = f.input :analyse_every, as: :numeric
+  = f.input :max_date, as: :datetime, html5: true
+  = f.submit
+

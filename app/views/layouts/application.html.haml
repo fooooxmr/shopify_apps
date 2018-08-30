@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ShopifyApps
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .navbar.navbar-inverse
+      .navbar-header
+        = link_to 'Shopify Apps', root_path, class: 'navbar-brand'
+      .navbar-right
+        = link_to 'Admin Zone', admin_config_index_path, class: 'navbar-brand'
+    = yield

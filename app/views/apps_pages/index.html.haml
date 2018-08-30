@@ -1,0 +1,29 @@
+%h1
+  .dropdown
+    %button.btn.btn-primary.dropdown-toggle{href: "#", "role" => "button", "data-toggle" => "dropdown"}
+      Version
+      %span.caret
+    %ul.dropdown-menu
+      - @versions.each do |version|
+        %li
+          = link_to version.created_at.localtime, root_path(version: version.id)
+%h2
+  - @apps_categories.each do |category, apps|
+    %h2
+      = category
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %thead
+        %tr
+          %th Name
+          %th Position
+          %th Link
+      %tbody
+        - apps.each do |app|
+          %tr
+            %td.col-md-4
+              = app.name
+            %td.col-md-1
+              = app.position
+            %td.col-md-4
+              = link_to app.url, app.url, target: :_blank
+
